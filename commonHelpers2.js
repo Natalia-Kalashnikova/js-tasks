@@ -1,0 +1,10 @@
+import"./assets/modulepreload-polyfill-3cfb730f.js";const o={form:document.querySelector(".js-search"),formContainer:document.querySelector(".js-form-container"),list:document.querySelector(".js-list"),addField:document.querySelector(".js-add"),removeField:document.querySelector(".js-remove")};o.addField.addEventListener("click",f);o.removeField.addEventListener("click",h);o.form.addEventListener("submit",u);async function u(t){t.preventDefault();const a=new FormData(t.currentTarget).getAll("country");try{const e=await p(a),n=await y(e);o.list.innerHTML=v(n)}catch(e){console.log(e)}finally{o.formContainer.innerHTML='<input type="text" name="country" />'}}async function p(t){const r=t.map(async e=>{const n=await fetch(`https://restcountries.com/v3.1/name/${e}`);if(!n.ok)throw new Error(n.statusText);return n.json()}),a=await Promise.allSettled(r);return console.log(a),a.filter(({status:e})=>e==="fulfilled").map(({value:e})=>e[0].capital[0])}function f(){o.formContainer.insertAdjacentHTML("beforeend",' <input type="text" name="country" />')}function h(){const{children:t,lastElementChild:r}=o.formContainer;t.length!==1&&r.remove()}async function y(t){const r="61069fb8abf74210b7d232148231510",a="http://api.weatherapi.com/v1",e="/current.json",n=t.map(async c=>{const l=new URLSearchParams({key:r,q:c,lang:"uk"}),i=await fetch(`${a}${e}?${l}`);if(!i.ok)throw new Error(i.statusText);return i.json()});return(await Promise.allSettled(n)).filter(({status:c})=>c==="fulfilled").map(({value:{location:{country:c,name:l},current:{temp_c:i,condition:{icon:m,text:d}}}})=>({country:c,name:l,temp_c:i,icon:m,text:d}))}function v(t){return t.map(({country:r,name:a,temp_c:e,icon:n,text:s})=>`
+    <li>
+        <img src="${n}" alt="${s}" />
+        <h2>${r}</h2>
+        <h2>${a}</h2>
+        <p>${s}</p>
+        <p class="temp">${e} °C</p>
+    </li>
+  `).join("")}fetch("https://api.thecatapi.com/v1/breeds");const w={headers:{"x-api-key":"live_ww4AjjgEJMWPZXfckgLikrYHKpCfRciUJxnZ3R7b8EHrjMK3j5ILPlmEMa66XbNy"}};fetch("https://api.thecatapi.com/v1/images/search?breed_ids=abys",w);
+//# sourceMappingURL=commonHelpers2.js.map
