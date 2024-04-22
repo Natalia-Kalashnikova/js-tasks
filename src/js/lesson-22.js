@@ -10,14 +10,21 @@
 
 // Приклад роботи https://ibb.co/6g3YYs8
 
-function multiply(x, y, z) {
-  console.log('The code before return is executed as usual');
+const day = 3;
 
-  return x * y * z;
-
-  console.log('This code is never executed because it is after return');
+switch (day) {
+  case 1:
+  case 2:
+  case 3:
+  case 4:
+  case 5:
+    console.log('This is a working day');
+    break;
+  case 6:
+  case 7:
+    console.log('It is a day off');
+    break;
+  default:
+    console.log('Invalid');
 }
-
-console.log(multiply(2, 3, 5)); // 30
-
 
