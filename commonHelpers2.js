@@ -1,2 +1,2 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";const a=6;switch(a){case 1:case 2:case 3:case 4:case 5:console.log("This is a working day");break;case 6:case 7:console.log("It is a day off");break;default:console.log("Invalid")}
+import"./assets/modulepreload-polyfill-3cfb730f.js";function o(n){let e=0;for(let l=0;l<=n;l+=1)l%2===0&&(e+=l);return e}console.log(o(1));console.log(o(3));console.log(o(7));console.log(o(18));console.log(o(27));
 //# sourceMappingURL=commonHelpers2.js.map
