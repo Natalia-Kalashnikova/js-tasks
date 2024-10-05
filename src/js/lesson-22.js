@@ -10,7 +10,7 @@
 
 // Приклад роботи https://ibb.co/6g3YYs8
 
-const day = 3;
+const day = 6;
 
 switch (day) {
   case 1:
@@ -27,4 +27,8 @@ switch (day) {
   default:
     console.log('Invalid');
 }
+
+//задача
+
+
 
