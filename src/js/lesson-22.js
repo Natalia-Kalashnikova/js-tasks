@@ -52,8 +52,8 @@ function calculateEvenTotal(number) {
 }
 
 
-console.log(calculateEvenTotal(1));
-console.log(calculateEvenTotal(3));
-console.log(calculateEvenTotal(7));
-console.log(calculateEvenTotal(18));
-console.log(calculateEvenTotal(27));
+// console.log(calculateEvenTotal(1));
+// console.log(calculateEvenTotal(3));
+// console.log(calculateEvenTotal(7));
+// console.log(calculateEvenTotal(18));
+// console.log(calculateEvenTotal(27));
