@@ -41,19 +41,19 @@
 // console.log(isNumberInRange(20, 50, 76));
 
 
-function calculateEvenTotal(number) {
-  let total = 0;
- for (let i = 0; i <= number; i += 1) {
-     if (i % 2 === 0) {
-         total += i;
-     }
- }
- return total;
+function createArrayOfNumbers(min, max) {
+const NewArray = [];
+for (let i = min; i <= max; i+=1) {
+  NewArray.push(i);
+}
+return NewArray;
 }
 
 
-// console.log(calculateEvenTotal(1));
-// console.log(calculateEvenTotal(3));
-// console.log(calculateEvenTotal(7));
-// console.log(calculateEvenTotal(18));
-// console.log(calculateEvenTotal(27));
+console.log(createArrayOfNumbers(1, 3));
+console.log(createArrayOfNumbers(14, 17));
+console.log(createArrayOfNumbers(29, 34));
+console.log(createArrayOfNumbers());
+
+
+
