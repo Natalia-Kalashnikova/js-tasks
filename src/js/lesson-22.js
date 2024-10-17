@@ -28,32 +28,38 @@
 //     console.log('Invalid');
 // }
 
-//задача
+//задача 1.1
 
-// function isNumberInRange(start, end, number) {
-//   if(number >= start && number <= end) {return  true;
-// }else{return false;}
+
+// function makeTransaction(quantity, pricePerDroid) {
+//   const totalPrice = quantity * pricePerDroid;
+//   return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
 // }
 
-// console.log(isNumberInRange(10, 30, 17));
-// console.log(isNumberInRange(10, 30, 5));
-// console.log(isNumberInRange(20, 50, 24));
-// console.log(isNumberInRange(20, 50, 76));
+// console.log(makeTransaction(5, 3000)); // "You ordered 5 droids worth 15000 credits!"
+// console.log(makeTransaction(3, 1000)); // "You ordered 3 droids worth 3000 credits!"
+// console.log(makeTransaction(10, 500)); // "You ordered 10 droids worth 5000 credits!"
 
+//задача 1.2
 
-function createArrayOfNumbers(min, max) {
-const NewArray = [];
-for (let i = min; i <= max; i+=1) {
-  NewArray.push(i);
+// function getShippingMessage(country, price, deliveryFee) {
+//   const totalPrice = price + deliveryFee;
+//   return `Shipping to ${country} will cost ${totalPrice} credits`;
+// }
+
+// console.log(getShippingMessage("Australia", 120, 50)); // "Shipping to Australia will cost 170 credits"
+// console.log(getShippingMessage("Germany", 80, 20)); // "Shipping to Germany will cost 100 credits"
+// console.log(getShippingMessage("Sweden", 100, 20)); // "Shipping to Sweden will cost 120 credits"
+
+//задача 1.3
+
+function getElementWidth(content, padding, border ) {
+  const contentWidth = parseFloat(content);
+  const paddingWidth = parseFloat(padding);
+  const borderWidth = parseFloat(border);
+  return contentWidth + paddingWidth * 2 + borderWidth * 2;
 }
-return NewArray;
-}
 
-
-console.log(createArrayOfNumbers(1, 3));
-console.log(createArrayOfNumbers(14, 17));
-console.log(createArrayOfNumbers(29, 34));
-console.log(createArrayOfNumbers());
-
-
-
+console.log(getElementWidth("50px", "8px", "4px")); // 74
+console.log(getElementWidth("60px", "12px", "8.5px")); // 101
+console.log(getElementWidth("200px", "0px", "0px")); // 200
