@@ -53,13 +53,29 @@
 
 //задача 1.3
 
-function getElementWidth(content, padding, border ) {
-  const contentWidth = parseFloat(content);
-  const paddingWidth = parseFloat(padding);
-  const borderWidth = parseFloat(border);
-  return contentWidth + paddingWidth * 2 + borderWidth * 2;
+// function getElementWidth(content, padding, border ) {
+//   const contentWidth = parseFloat(content);
+//   const paddingWidth = parseFloat(padding);
+//   const borderWidth = parseFloat(border);
+//   return contentWidth + paddingWidth * 2 + borderWidth * 2;
+// }
+
+// console.log(getElementWidth("50px", "8px", "4px")); // 74
+// console.log(getElementWidth("60px", "12px", "8.5px")); // 101
+// console.log(getElementWidth("200px", "0px", "0px")); // 200
+
+function normalizeInput(input, to) {
+  if(to === "upper"){
+    return input.toUpperCase();
+  } else{
+    return input.toLowerCase();
+  }
 }
 
-console.log(getElementWidth("50px", "8px", "4px")); // 74
-console.log(getElementWidth("60px", "12px", "8.5px")); // 101
-console.log(getElementWidth("200px", "0px", "0px")); // 200
+console.log(normalizeInput("This ISN'T SpaM", "lower"));
+console.log(normalizeInput("This ISN'T SpaM", "upper"));
+console.log(normalizeInput("Big SALE", "lower"));
+console.log(normalizeInput("Big SALE", "upper"));
+console.log(normalizeInput("Stay Awhile and Listen", "lower"));
+console.log(normalizeInput("Stay Awhile and Listen", "upper"));
+
