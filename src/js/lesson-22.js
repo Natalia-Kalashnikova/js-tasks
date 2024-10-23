@@ -116,7 +116,7 @@
 // console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!")); // true
 // console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
 
-задача 2.4
+// задача 2.4
 function getShippingCost(country) {
   switch (country) {
     case "China": return `Shipping to China will cost 100 credits`;
