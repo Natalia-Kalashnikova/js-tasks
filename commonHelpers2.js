@@ -1,2 +1,2 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";function o(){let e=[];for(const r of arguments)e.push(r);return e.toReversed()}console.log(o(12,85,37,4));console.log(o(164,48,291));console.log(o(412,371,94,63,176));console.log(o());
+import"./assets/modulepreload-polyfill-3cfb730f.js";function o(e,r){let n=[];for(let l=0;l<e.length;l+=1)e[l]>r&&n.push(e[l]);return n}console.log(o([1,2,3,4,5],3));console.log(o([1,2,3,4,5],4));console.log(o([1,2,3,4,5],5));console.log(o([12,24,8,41,76],38));console.log(o([12,24,8,41,76],20));
 //# sourceMappingURL=commonHelpers2.js.map
