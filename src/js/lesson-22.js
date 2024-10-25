@@ -117,23 +117,33 @@
 // console.log(checkForSpam("[SPAM] How to earn fast money?")); // true
 
 // задача 2.4
-function getShippingCost(country) {
-  switch (country) {
-    case "China": return `Shipping to China will cost 100 credits`;
-    case "Chile": return `Shipping to Chile will cost 250 credits`;
-    case "Australia": return `Shipping to Australia  will cost 170 credits`;
-    case "Jamaica": return `Shipping to Jamaica will cost 120 credits`;
-    default: return `Sorry, there is no delivery to your country`
+// function getShippingCost(country) {
+//   switch (country) {
+//     case "China": return `Shipping to China will cost 100 credits`;
+//     case "Chile": return `Shipping to Chile will cost 250 credits`;
+//     case "Australia": return `Shipping to Australia  will cost 170 credits`;
+//     case "Jamaica": return `Shipping to Jamaica will cost 120 credits`;
+//     default: return `Sorry, there is no delivery to your country`
 
+//   }
+// }
+
+// console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170 credits"
+// console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your country"
+// console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"
+// console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"
+// console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120 credits"
+// console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your country"
+
+function createReversedArray() {
+  let newArray = [];
+  for(const arg of arguments){
+    newArray.push(arg);
   }
+  return newArray.toReversed();
 }
 
-console.log(getShippingCost("Australia")); // "Shipping to Australia will cost 170 credits"
-console.log(getShippingCost("Germany")); // "Sorry, there is no delivery to your country"
-console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"
-console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"
-console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120 credits"
-console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your country"
-
-
-
+console.log(createReversedArray(12, 85, 37, 4));//[4, 37, 85, 12]
+console.log(createReversedArray(164, 48, 291));//[291, 48, 164]
+console.log(createReversedArray(412, 371, 94, 63, 176));//[176, 63, 94, 371, 412]
+console.log(createReversedArray());//[]
