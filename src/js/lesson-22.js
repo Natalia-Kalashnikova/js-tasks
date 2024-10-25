@@ -133,17 +133,50 @@
 // console.log(getShippingCost("China")); // "Shipping to China will cost 100 credits"
 // console.log(getShippingCost("Chile")); // "Shipping to Chile will cost 250 credits"
 // console.log(getShippingCost("Jamaica")); // "Shipping to Jamaica will cost 120 credits"
-// console.log(getShippingCost("Sweden")); // "Sorry, there is no delivery to your country"
 
-function createReversedArray() {
+// задача 3.1
+
+// function slugify(title) {
+//   return title.toLowerCase().split(' ').join('-');
+// }
+
+// console.log(slugify("Arrays for beginners")); // "arrays-for-beginners"
+// console.log(slugify("English for developer")); // "english-for-developer"
+// console.log(slugify("Ten secrets of JavaScript")); // "ten-secrets-of-javascript"
+// console.log(slugify("How to become a JUNIOR developer in TWO WEEKS")); // "how-to-become-a-junior-developer-in-two-weeks"
+
+// задача 3.2
+
+// function makeArray(firstArray, secondArray, maxLength) {
+//   const newArray = firstArray.concat(secondArray);
+//   if (newArray.length > maxLength) {
+//     return newArray.slice(0, maxLength);
+//   } else {
+//     return newArray;
+//   }
+// }
+
+// console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3)); // ["Mango", "Poly", "Ajax"]
+// console.log(makeArray(["Mango", "Poly", "Houston"], ["Ajax", "Chelsea"], 4)); // ["Mango", "Poly", "Houston", "Ajax"]
+// console.log(makeArray(["Mango"], ["Ajax", "Chelsea", "Poly", "Houston"], 3)); // ["Mango", "Ajax", "Chelsea"]
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 2)); // ["Earth", "Jupiter"]
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus"], 4)); // ["Earth", "Jupiter", "Neptune", "Uranus"]
+// console.log(makeArray(["Earth", "Jupiter"], ["Neptune", "Uranus", "Venus"], 0)); // []
+
+// задача 3.3
+
+function filterArray(numbers, value) {
   let newArray = [];
-  for(const arg of arguments){
-    newArray.push(arg);
+  for (let i = 0; i < numbers.length; i += 1){
+    if (numbers[i] > value) {
+      newArray.push(numbers[i]);
+    }
   }
-  return newArray.toReversed();
+  return newArray;
 }
 
-console.log(createReversedArray(12, 85, 37, 4));//[4, 37, 85, 12]
-console.log(createReversedArray(164, 48, 291));//[291, 48, 164]
-console.log(createReversedArray(412, 371, 94, 63, 176));//[176, 63, 94, 371, 412]
-console.log(createReversedArray());//[]
+console.log(filterArray([1, 2, 3, 4, 5], 3)); // [4, 5]
+console.log(filterArray([1, 2, 3, 4, 5], 4)); // [5]
+console.log(filterArray([1, 2, 3, 4, 5], 5)); // []
+console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
+console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
