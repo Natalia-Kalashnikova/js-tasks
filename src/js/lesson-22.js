@@ -181,14 +181,27 @@
 // console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
 // console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
 
-const apartment = {
-  descr: "Spacious apartment in the city center",
-  rating: 4,
-  price: 2153,
-};
+// const apartment = {
+//   descr: "Spacious apartment in the city center",
+//   rating: 4,
+//   price: 2153,
+// };
 
-const keys = Object.keys(apartment);
-const values = Object.values(apartment);
+// const keys = Object.keys(apartment);
+// const values = Object.values(apartment);
 
-console.log(keys);//["descr", "rating", "price"]
-console.log(values);//["Spacious apartment in the city center", 4, 2153]
+// console.log(keys);//["descr", "rating", "price"]
+// console.log(values);//["Spacious apartment in the city center", 4, 2153]
+
+function countTotalSalary(salaries) {
+  let totalSalary = 0;
+  const value = Object.values(salaries);
+  for(let i =0; i < value.length; i+=1){
+    totalSalary+=value[i];
+  }
+  return totalSalary;
+}
+
+console.log(countTotalSalary({}));// 0
+console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));//330
+console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));//400
