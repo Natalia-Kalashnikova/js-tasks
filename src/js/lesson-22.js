@@ -193,15 +193,60 @@
 // console.log(keys);//["descr", "rating", "price"]
 // console.log(values);//["Spacious apartment in the city center", 4, 2153]
 
-function countTotalSalary(salaries) {
-  let totalSalary = 0;
-  const value = Object.values(salaries);
-  for(let i =0; i < value.length; i+=1){
-    totalSalary+=value[i];
+// function countTotalSalary(salaries) {
+//   let totalSalary = 0;
+//   const value = Object.values(salaries);
+//   for(let i =0; i < value.length; i+=1){
+//     totalSalary+=value[i];
+//   }
+//   return totalSalary;
+// }
+
+// console.log(countTotalSalary({}));// 0
+// console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));//330
+// console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));//400
+
+// function getAllPropValues(propName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
+
+//   const propValues =[];
+//   for(const product of products){
+//     if (Object.keys(product).includes(propName)) {
+//       propValues.push(product[propName]);
+//     }
+//   }
+//   return propValues;
+// }
+
+// console.log(getAllPropValues("name"));//["Radar", "Scanner", "Droid", "Grip"]
+// console.log(getAllPropValues("quantity"));//[4, 3, 7, 9]
+// console.log(getAllPropValues("price"));//[1300, 2700, 400, 1200]
+// console.log(getAllPropValues("category"));//[]
+
+function calculateTotalPrice(productName) {
+  const products = [
+    { name: "Radar", price: 1300, quantity: 4 },
+    { name: "Scanner", price: 2700, quantity: 3 },
+    { name: "Droid", price: 400, quantity: 7 },
+    { name: "Grip", price: 1200, quantity: 9 },
+  ];
+
+  let totalPrice = 0;
+  for(const product of products){
+    if(product.name === productName){
+      totalPrice = product.price * product.quantity;
+    }
   }
-  return totalSalary;
+  return totalPrice || `Product ${productName} not found!`;
 }
 
-console.log(countTotalSalary({}));// 0
-console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));//330
-console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));//400
+console.log(calculateTotalPrice("Blaster"));// "Product Blaster not found!"
+console.log(calculateTotalPrice("Radar"));//5200
+console.log(calculateTotalPrice("Droid"));//2800
+console.log(calculateTotalPrice("Grip"));//10800
+console.log(calculateTotalPrice("Scanner"));//8100
