@@ -1,2 +1,2 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";function l(e){let a=0;const t=Object.values(e);for(let o=0;o<t.length;o+=1)a+=t[o];return a}console.log(l({}));console.log(l({mango:100,poly:150,alfred:80}));console.log(l({kiwi:200,poly:50,ajax:150}));
+import"./assets/modulepreload-polyfill-3cfb730f.js";function o(t){const r=[{name:"Radar",price:1300,quantity:4},{name:"Scanner",price:2700,quantity:3},{name:"Droid",price:400,quantity:7},{name:"Grip",price:1200,quantity:9}];let e=0;for(const n of r)n.name===t&&(e=n.price*n.quantity);return e||`Product ${t} not found!`}console.log(o("Blaster"));console.log(o("Radar"));console.log(o("Droid"));console.log(o("Grip"));console.log(o("Scanner"));
 //# sourceMappingURL=commonHelpers2.js.map
