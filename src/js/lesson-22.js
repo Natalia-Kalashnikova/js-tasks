@@ -228,25 +228,52 @@
 // console.log(getAllPropValues("price"));//[1300, 2700, 400, 1200]
 // console.log(getAllPropValues("category"));//[]
 
-function calculateTotalPrice(productName) {
-  const products = [
-    { name: "Radar", price: 1300, quantity: 4 },
-    { name: "Scanner", price: 2700, quantity: 3 },
-    { name: "Droid", price: 400, quantity: 7 },
-    { name: "Grip", price: 1200, quantity: 9 },
-  ];
+// function calculateTotalPrice(productName) {
+//   const products = [
+//     { name: "Radar", price: 1300, quantity: 4 },
+//     { name: "Scanner", price: 2700, quantity: 3 },
+//     { name: "Droid", price: 400, quantity: 7 },
+//     { name: "Grip", price: 1200, quantity: 9 },
+//   ];
 
-  let totalPrice = 0;
-  for(const product of products){
-    if(product.name === productName){
-      totalPrice = product.price * product.quantity;
+//   let totalPrice = 0;
+//   for(const product of products){
+//     if(product.name === productName){
+//       totalPrice = product.price * product.quantity;
+//     }
+//   }
+//   return totalPrice || `Product ${productName} not found!`;
+// }
+
+// console.log(calculateTotalPrice("Blaster"));// "Product Blaster not found!"
+// console.log(calculateTotalPrice("Radar"));//5200
+// console.log(calculateTotalPrice("Droid"));//2800
+// console.log(calculateTotalPrice("Grip"));//10800
+// console.log(calculateTotalPrice("Scanner"));//8100
+
+const atTheOldToad = {
+  potions: [
+    { name: "Speed potion", price: 460 },
+    { name: "Stone skin", price: 520 },
+  ],
+  getPotions() {
+    return this.potions;
+  },
+  addPotion(newPotion) {
+    this.potions.push(newPotion);
+  },
+  getTotalPrice() {
+    let totalPrice = 0;
+    for(const potion of this.potions){
+      totalPrice += potion.price;
     }
-  }
-  return totalPrice || `Product ${productName} not found!`;
-}
+  return totalPrice;
+  },
+};
 
-console.log(calculateTotalPrice("Blaster"));// "Product Blaster not found!"
-console.log(calculateTotalPrice("Radar"));//5200
-console.log(calculateTotalPrice("Droid"));//2800
-console.log(calculateTotalPrice("Grip"));//10800
-console.log(calculateTotalPrice("Scanner"));//8100
+
+console.log(atTheOldToad.addPotion({ name: "Invisibility", price: 620 }));
+console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
+console.log(atTheOldToad.getTotalPrice());
+
+
