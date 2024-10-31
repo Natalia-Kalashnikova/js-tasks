@@ -251,6 +251,32 @@
 // console.log(calculateTotalPrice("Grip"));//10800
 // console.log(calculateTotalPrice("Scanner"));//8100
 
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   getPotions() {
+//     return this.potions;
+//   },
+//   addPotion(newPotion) {
+//     this.potions.push(newPotion);
+//   },
+//   getTotalPrice() {
+//     let totalPrice = 0;
+//     for(const potion of this.potions){
+//       totalPrice += potion.price;
+//     }
+//   return totalPrice;
+//   },
+// };
+
+
+// atTheOldToad.addPotion({ name: "Invisibility", price: 620 });
+// atTheOldToad.addPotion({ name: "Power potion", price: 270 });
+// console.log("Список зелий:", atTheOldToad.getPotions());
+// console.log("Общая стоимость зелий:", atTheOldToad.getTotalPrice());
+
 const atTheOldToad = {
   potions: [
     { name: "Speed potion", price: 460 },
@@ -259,21 +285,17 @@ const atTheOldToad = {
   getPotions() {
     return this.potions;
   },
-  addPotion(newPotion) {
-    this.potions.push(newPotion);
-  },
-  getTotalPrice() {
-    let totalPrice = 0;
-    for(const potion of this.potions){
-      totalPrice += potion.price;
-    }
-  return totalPrice;
+    updatePotionName(oldName, newName) {
+        for (const potion of this.potions) {
+            if (potion.name === oldName) {
+                potion.name = newName;
+          }
+      }
   },
 };
 
-
-console.log(atTheOldToad.addPotion({ name: "Invisibility", price: 620 }));
-console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
-console.log(atTheOldToad.getTotalPrice());
-
+atTheOldToad.updatePotionName("Stone skin", "Invisibility");//[{ name: "Speed potion", price: 460 }, { name: "Invisibility", price: 520 } ]
+console.log(atTheOldToad.getPotions());
+// atTheOldToad.updatePotionName("Speed potion", "Polymorth");//[{ name: "Polymorth", price: 460 }, { name: "Invisibility", price: 520 } ]
+// console.log(atTheOldToad.getPotions());
 
