@@ -277,25 +277,33 @@
 // console.log("Список зелий:", atTheOldToad.getPotions());
 // console.log("Общая стоимость зелий:", atTheOldToad.getTotalPrice());
 
-const atTheOldToad = {
-  potions: [
-    { name: "Speed potion", price: 460 },
-    { name: "Stone skin", price: 520 },
-  ],
-  getPotions() {
-    return this.potions;
-  },
-    updatePotionName(oldName, newName) {
-        for (const potion of this.potions) {
-            if (potion.name === oldName) {
-                potion.name = newName;
-          }
-      }
-  },
-};
+// const atTheOldToad = {
+//   potions: [
+//     { name: "Speed potion", price: 460 },
+//     { name: "Stone skin", price: 520 },
+//   ],
+//   getPotions() {
+//     return this.potions;
+//   },
+//     updatePotionName(oldName, newName) {
+//         for (const potion of this.potions) {
+//             if (potion.name === oldName) {
+//                 potion.name = newName;
+//           }
+//       }
+//   },
+// };
 
-atTheOldToad.updatePotionName("Stone skin", "Invisibility");//[{ name: "Speed potion", price: 460 }, { name: "Invisibility", price: 520 } ]
-console.log(atTheOldToad.getPotions());
+// atTheOldToad.updatePotionName("Stone skin", "Invisibility");//[{ name: "Speed potion", price: 460 }, { name: "Invisibility", price: 520 } ]
+// console.log(atTheOldToad.getPotions());
 // atTheOldToad.updatePotionName("Speed potion", "Polymorth");//[{ name: "Polymorth", price: 460 }, { name: "Invisibility", price: 520 } ]
 // console.log(atTheOldToad.getPotions());
 
+function getExtremeScores(scores) {
+    const best = Math.max(...scores);
+    const worst = Math.min(...scores);
+    return{best, worst};
+}
+
+console.log(getExtremeScores([89, 64, 42, 17, 93, 51, 26]));//{ best: 93, worst: 17 }
+console.log(getExtremeScores([19, 7, 4, 17, 81, 24]));//{ best: 81, worst: 4 }
