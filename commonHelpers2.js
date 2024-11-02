@@ -1,2 +1,2 @@
-import"./assets/modulepreload-polyfill-3cfb730f.js";function t(o){const n=Math.max(...o),e=Math.min(...o);return{best:n,worst:e}}console.log(t([89,64,42,17,93,51,26]));console.log(t([19,7,4,17,81,24]));
+import"./assets/modulepreload-polyfill-3cfb730f.js";const e={username:"Jacob",playTime:300,changeUsername(o){this.username=o},updatePlayTime(o){this.playTime+=o},getInfo(){return`${this.username} has ${this.playTime} active hours!`}};console.log(e.getInfo());e.changeUsername("Marco");console.log(e.getInfo());e.updatePlayTime(20);console.log(e.getInfo());
 //# sourceMappingURL=commonHelpers2.js.map
