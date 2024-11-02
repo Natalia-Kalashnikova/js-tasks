@@ -181,129 +181,93 @@
 // console.log(filterArray([12, 24, 8, 41, 76], 38)); // [41, 76]
 // console.log(filterArray([12, 24, 8, 41, 76], 20)); // [24, 41, 76]
 
-// const apartment = {
-//   descr: "Spacious apartment in the city center",
-//   rating: 4,
-//   price: 2153,
-// };
+// задача 4.1
 
-// const keys = Object.keys(apartment);
-// const values = Object.values(apartment);
-
-// console.log(keys);//["descr", "rating", "price"]
-// console.log(values);//["Spacious apartment in the city center", 4, 2153]
-
-// function countTotalSalary(salaries) {
-//   let totalSalary = 0;
-//   const value = Object.values(salaries);
-//   for(let i =0; i < value.length; i+=1){
-//     totalSalary+=value[i];
-//   }
-//   return totalSalary;
+// function isEnoughCapacity(products, containerSize) {
+//     let totalCount = 0;
+//     for (const product in products) {
+//         totalCount += products[product];
+//     }
+//     return totalCount <= containerSize;
 // }
 
-// console.log(countTotalSalary({}));// 0
-// console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 }));//330
-// console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));//400
+// console.log(
+//   isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+// ); // true
 
-// function getAllPropValues(propName) {
-//   const products = [
-//     { name: "Radar", price: 1300, quantity: 4 },
-//     { name: "Scanner", price: 2700, quantity: 3 },
-//     { name: "Droid", price: 400, quantity: 7 },
-//     { name: "Grip", price: 1200, quantity: 9 },
-//   ];
+// console.log(
+//   isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+// ); // false
 
-//   const propValues =[];
-//   for(const product of products){
-//     if (Object.keys(product).includes(propName)) {
-//       propValues.push(product[propName]);
-//     }
+// console.log(
+//   isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
+// ); // true
+
+// console.log(
+//   isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
+// ); // false
+
+// задача 4.2
+// function calcAverageCalories(days) {
+//   let totalCalories = 0;
+//   for (const day of days) {
+//     totalCalories += day.calories;
 //   }
-//   return propValues;
+//   if (days.length === 0) {
+//     return 0;
+//   }
+//     return totalCalories / days.length;
 // }
 
-// console.log(getAllPropValues("name"));//["Radar", "Scanner", "Droid", "Grip"]
-// console.log(getAllPropValues("quantity"));//[4, 3, 7, 9]
-// console.log(getAllPropValues("price"));//[1300, 2700, 400, 1200]
-// console.log(getAllPropValues("category"));//[]
+// console.log(
+//   calcAverageCalories([
+//     { day: "monday", calories: 3010 },
+//     { day: "tuesday", calories: 3200 },
+//     { day: "wednesday", calories: 3120 },
+//     { day: "thursday", calories: 2900 },
+//     { day: "friday", calories: 3450 },
+//     { day: "saturday", calories: 3280 },
+//     { day: "sunday", calories: 3300 }
+//   ])
+// ); // 3180
 
-// function calculateTotalPrice(productName) {
-//   const products = [
-//     { name: "Radar", price: 1300, quantity: 4 },
-//     { name: "Scanner", price: 2700, quantity: 3 },
-//     { name: "Droid", price: 400, quantity: 7 },
-//     { name: "Grip", price: 1200, quantity: 9 },
-//   ];
+// console.log(
+//   calcAverageCalories([
+//     { day: "monday", calories: 2040 },
+//     { day: "tuesday", calories: 2270 },
+//     { day: "wednesday", calories: 2420 },
+//     { day: "thursday", calories: 1900 },
+//     { day: "friday", calories: 2370 },
+//     { day: "saturday", calories: 2280 },
+//     { day: "sunday", calories: 2610 }
+//   ])
+// ); // 2270
 
-//   let totalPrice = 0;
-//   for(const product of products){
-//     if(product.name === productName){
-//       totalPrice = product.price * product.quantity;
-//     }
-//   }
-//   return totalPrice || `Product ${productName} not found!`;
-// }
+// console.log(
+//   calcAverageCalories([])
+// ); // 0
 
-// console.log(calculateTotalPrice("Blaster"));// "Product Blaster not found!"
-// console.log(calculateTotalPrice("Radar"));//5200
-// console.log(calculateTotalPrice("Droid"));//2800
-// console.log(calculateTotalPrice("Grip"));//10800
-// console.log(calculateTotalPrice("Scanner"));//8100
+// задача 4.3
 
-// const atTheOldToad = {
-//   potions: [
-//     { name: "Speed potion", price: 460 },
-//     { name: "Stone skin", price: 520 },
-//   ],
-//   getPotions() {
-//     return this.potions;
-//   },
-//   addPotion(newPotion) {
-//     this.potions.push(newPotion);
-//   },
-//   getTotalPrice() {
-//     let totalPrice = 0;
-//     for(const potion of this.potions){
-//       totalPrice += potion.price;
-//     }
-//   return totalPrice;
-//   },
-// };
+const profile = {
+    username: "Jacob",
+  playTime: 300,
+  changeUsername(newName) {
+    this.username = newName;
+  },
+  updatePlayTime(hours) {
+    this.playTime += hours;
+  },
+  getInfo() {
+    return `${this.username} has ${this.playTime} active hours!`
+  }
+};
 
 
-// atTheOldToad.addPotion({ name: "Invisibility", price: 620 });
-// atTheOldToad.addPotion({ name: "Power potion", price: 270 });
-// console.log("Список зелий:", atTheOldToad.getPotions());
-// console.log("Общая стоимость зелий:", atTheOldToad.getTotalPrice());
+console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-// const atTheOldToad = {
-//   potions: [
-//     { name: "Speed potion", price: 460 },
-//     { name: "Stone skin", price: 520 },
-//   ],
-//   getPotions() {
-//     return this.potions;
-//   },
-//     updatePotionName(oldName, newName) {
-//         for (const potion of this.potions) {
-//             if (potion.name === oldName) {
-//                 potion.name = newName;
-//           }
-//       }
-//   },
-// };
+profile.changeUsername("Marco");
+console.log(profile.getInfo()); // "Marco has 300 active hours!"
 
-// atTheOldToad.updatePotionName("Stone skin", "Invisibility");//[{ name: "Speed potion", price: 460 }, { name: "Invisibility", price: 520 } ]
-// console.log(atTheOldToad.getPotions());
-// atTheOldToad.updatePotionName("Speed potion", "Polymorth");//[{ name: "Polymorth", price: 460 }, { name: "Invisibility", price: 520 } ]
-// console.log(atTheOldToad.getPotions());
-
-function getExtremeScores(scores) {
-    const best = Math.max(...scores);
-    const worst = Math.min(...scores);
-    return{best, worst};
-}
-
-console.log(getExtremeScores([89, 64, 42, 17, 93, 51, 26]));//{ best: 93, worst: 17 }
-console.log(getExtremeScores([19, 7, 4, 17, 81, 24]));//{ best: 81, worst: 4 }
+profile.updatePlayTime(20);
+console.log(profile.getInfo()); // "Marco has 320 active hours!"
